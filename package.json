@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "bundle": "webpack index.js bundle.js"
+  },
+  "dependencies": {
+    "dependency-tree": "^6.0.1",
+    "node-source-walk": "^3.3.0"
+  }
+}
