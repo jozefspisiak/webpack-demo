@@ -1,3 +1,8 @@
+let incrementVariable = 0;
+
 exports.a = function() {
-  console.log("a");
+  incrementVariable++;
+  console.log(incrementVariable);
 };
+
+console.log("a included");

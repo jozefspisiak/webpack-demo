@@ -92,7 +92,7 @@ if (fs.existsSync(pathToOutput)) {
 const templateStart = `(function(modules) {
     var installedModules = {};
     function require(moduleId) {
-        if (installedModules[moduleId]) return installedModules[moduleId];
+        if (installedModules[moduleId]) return installedModules[moduleId].exports;
         var module = (installedModules[moduleId] = {
             exports: {}
         });
@@ -110,7 +110,7 @@ const sourceEnd = `
 },`;
 
 // writing the output file
-fs.appendFile(pathToOutput, templateStart, function(err) {
+fs.writeFile(pathToOutput, templateStart, function(err) {
   if (err) {
     return console.log(err);
   }
