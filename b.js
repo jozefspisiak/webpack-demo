@@ -1,5 +1,9 @@
-export default function b() {
-  console.log("b");
+function write(message) {
+  console.log(message);
 }
 
-console.log("b included");
+export default function b() {
+  write("b");
+}
+
+write("b included");

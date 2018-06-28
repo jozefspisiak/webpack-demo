@@ -1,8 +1,12 @@
 let incrementVariable = 0;
 
+function write(message) {
+  console.log(message);
+}
+
 exports.increaseAndPrintNumber = function() {
   incrementVariable++;
-  console.log(incrementVariable);
+  write(incrementVariable);
 };
 
-console.log("a included");
+write("a included");

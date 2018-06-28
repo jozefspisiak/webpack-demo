@@ -41,21 +41,29 @@ console.log("circB incl");
 },function(module, exports, require) {
 const a = require(4);
 
+function write(message) {
+  console.log(message);
+}
+
 exports.callAFromC = function() {
   a.increaseAndPrintNumber();
 };
 
 a.increaseAndPrintNumber();
-console.log("c included and called a()");
+write("c included and called a()");
 
 },function(module, exports, require) {
 let incrementVariable = 0;
 
+function write(message) {
+  console.log(message);
+}
+
 exports.increaseAndPrintNumber = function() {
   incrementVariable++;
-  console.log(incrementVariable);
+  write(incrementVariable);
 };
 
-console.log("a included");
+write("a included");
 
 },])

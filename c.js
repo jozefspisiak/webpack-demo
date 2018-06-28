@@ -1,8 +1,12 @@
 const a = require("./a.js");
 
+function write(message) {
+  console.log(message);
+}
+
 exports.callAFromC = function() {
   a.increaseAndPrintNumber();
 };
 
 a.increaseAndPrintNumber();
-console.log("c included and called a()");
+write("c included and called a()");
