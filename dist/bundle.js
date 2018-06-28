@@ -11,47 +11,47 @@
     return require(0);
 })([
 function(module, exports, require) {
-const a = require(4).a;
-const c = require(3).c;
+const a = require(4);
+const c = require(3);
 
-a();
-c();
+a.increaseAndPrintNumber();
+c.callAFromC();
 
 const circular = require(1);
 
 },function(module, exports, require) {
-const circularb = require(2).circularb;
+const circularB = require(2);
 
 exports.circulara = function() {
   console.log("circular A");
 };
 
 console.log("circA incl");
-circularb();
+circularB.circularb();
 
 },function(module, exports, require) {
-const circulara = require(1);
+const circularA = require(1);
 
 exports.circularb = function() {
-  circulara.circulara();
+  circularA.circulara();
 };
 
 console.log("circB incl");
 
 },function(module, exports, require) {
-const a = require(4).a;
+const a = require(4);
 
-exports.c = function() {
-  a();
+exports.callAFromC = function() {
+  a.increaseAndPrintNumber();
 };
 
-a();
+a.increaseAndPrintNumber();
 console.log("c included and called a()");
 
 },function(module, exports, require) {
 let incrementVariable = 0;
 
-exports.a = function() {
+exports.increaseAndPrintNumber = function() {
   incrementVariable++;
   console.log(incrementVariable);
 };

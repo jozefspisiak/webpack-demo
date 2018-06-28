@@ -1,6 +1,6 @@
 let incrementVariable = 0;
 
-exports.a = function() {
+exports.increaseAndPrintNumber = function() {
   incrementVariable++;
   console.log(incrementVariable);
 };

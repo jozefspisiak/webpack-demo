@@ -1,7 +1,7 @@
-const circulara = require("./circular-a.js");
+const circularA = require("./circular-a.js");
 
 exports.circularb = function() {
-  circulara.circulara();
+  circularA.circulara();
 };
 
 console.log("circB incl");

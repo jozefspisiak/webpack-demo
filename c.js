@@ -1,8 +1,8 @@
-const a = require("./a.js").a;
+const a = require("./a.js");
 
-exports.c = function() {
-  a();
+exports.callAFromC = function() {
+  a.increaseAndPrintNumber();
 };
 
-a();
+a.increaseAndPrintNumber();
 console.log("c included and called a()");

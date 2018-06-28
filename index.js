@@ -1,7 +1,7 @@
-const a = require("./a.js").a;
-const c = require("./c.js").c;
+const a = require("./a.js");
+const c = require("./c.js");
 
-a();
-c();
+a.increaseAndPrintNumber();
+c.callAFromC();
 
 const circular = require("./circular-a.js");
