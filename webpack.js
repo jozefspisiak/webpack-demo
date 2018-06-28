@@ -110,27 +110,26 @@ const sourceEnd = `
 },`;
 
 // writing the output file
-fs.writeFile(pathToOutput, templateStart, function(err) {
+fs.writeFileSync(pathToOutput, templateStart, function(err) {
   if (err) {
     return console.log(err);
   }
 });
 
-for (index = 0; index < dependencyList.length; index++) {
-  fs.appendFile(
-    pathToOutput,
-    sourceStart + sources[index] + sourceEnd,
-    function(err) {
-      if (err) {
-        return console.log(err);
-      }
+sources.forEach(source => {
+  fs.appendFileSync(pathToOutput, sourceStart + source + sourceEnd, function(
+    err
+  ) {
+    if (err) {
+      return console.log(err);
     }
-  );
-}
+  });
+});
 
-fs.appendFile(pathToOutput, templateEnd, function(err) {
+fs.appendFileSync(pathToOutput, templateEnd, function(err) {
   if (err) {
     return console.log(err);
   }
-  console.log(`Finished, bundle has been written to: ${pathToOutput}`);
 });
+
+console.log(`Finished, bundle has been written to: ${pathToOutput}`);
